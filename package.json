@@ -5,8 +5,14 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.23",
+    "add": "^2.0.6",
+    "bootstrap": "^4.3.1",
     "gatsby": "^2.17.11",
+    "gatsby-background-image": "^0.8.18",
     "gatsby-image": "^2.2.31",
+    "gatsby-plugin-emotion": "^4.1.15",
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-offline": "^3.0.19",
     "gatsby-plugin-react-helmet": "^3.1.14",
@@ -16,9 +22,16 @@
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "yarn": "^1.19.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@storybook/addon-actions": "^5.2.6",
+    "@storybook/addon-links": "^5.2.6",
+    "@storybook/addons": "^5.2.6",
+    "@storybook/react": "^5.2.6",
+    "babel-loader": "^8.0.6",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -31,7 +44,9 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "storybook": "NODE_ENV=production && start-storybook -p 6006",
+    "build-storybook": "NODE_ENV=production && build-storybook"
   },
   "repository": {
     "type": "git",
