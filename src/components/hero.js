@@ -6,8 +6,8 @@ import styled from "@emotion/styled";
 
 const BgHeroImage = styled(BackgroundImage)`
   background-size: cover;
-  min-height: 80vh;
-  margin-top: 60px;
+  height: 80vh;
+  padding-top: 60px;
   position: relative;
 `;
 
@@ -49,7 +49,7 @@ function Hero({ title, description }) {
     }
   `);
   return (
-    <header>
+    <div>
       <BgHeroImage fluid={data.file.childImageSharp.fluid}>
         <Center>
           <Title>{title}</Title>
@@ -57,7 +57,7 @@ function Hero({ title, description }) {
           <button>call to action</button>
         </Center>
       </BgHeroImage>
-    </header>
+    </div>
   );
 }
 
