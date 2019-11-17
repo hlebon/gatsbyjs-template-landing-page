@@ -4,16 +4,58 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-
-import React from "react";
+/** @jsx jsx */
 import PropTypes from "prop-types";
+
+import { css, jsx } from "@emotion/core";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "./header";
 import Hero from "./hero";
 import Footer from "./footer";
+import Services from "./services";
 
 import "bootstrap/dist/css/bootstrap-reboot.min.css";
+
+const Section = ({ children, title, transparent }) => {
+  return (
+    <section
+      css={css`
+        width: 100%;
+        background-color: ${transparent ? "transparent" : "#fff"};
+      `}
+    >
+      <div
+        css={css`
+          max-width: 800px;
+          margin: auto;
+          padding: 1rem 0;
+        `}
+      >
+        {title.trim().length > 0 ? (
+          <h3
+            css={css`
+              text-align: center;
+            `}
+          >
+            {title}
+          </h3>
+        ) : null}
+        {children}
+      </div>
+    </section>
+  );
+};
+
+Section.defaultProps = {
+  title: "",
+  transparent: false,
+};
+
+Section.propTypes = {
+  title: PropTypes.string,
+  transparent: PropTypes.bool,
+};
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,7 +71,15 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Hero title="Hello world" description="description" />
+      <Hero
+        title="Hello world"
+        description="description"
+        sectionBottom={
+          <Section transparent>
+            <Services />
+          </Section>
+        }
+      />
       <div
         style={{
           margin: `0 auto`,
