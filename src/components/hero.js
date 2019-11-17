@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 
 const BgHeroImage = styled(BackgroundImage)`
   background-size: cover;
-  height: 80vh;
+  height: 100vh;
   padding-top: 60px;
   position: relative;
 `;
@@ -28,6 +28,12 @@ const Center = styled.div`
   );
 `;
 
+const BottomSection = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`;
 const Title = styled.h1`
   color: #fff;
 `;
@@ -36,7 +42,7 @@ const Description = styled.p`
   color: #fff;
 `;
 
-function Hero({ title, description }) {
+function Hero({ title, description, sectionBottom }) {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "hero.jpg" }) {
@@ -56,6 +62,7 @@ function Hero({ title, description }) {
           <Description>{description}</Description>
           <button>call to action</button>
         </Center>
+        <BottomSection>{sectionBottom}</BottomSection>
       </BgHeroImage>
     </div>
   );
