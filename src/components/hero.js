@@ -1,45 +1,23 @@
+/** @jsx jsx */
+
 import PropTypes from "prop-types";
 import React from "react";
+
 import { useStaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 import styled from "@emotion/styled";
+import { css, jsx } from "@emotion/core";
+import { FaLocationArrow } from "react-icons/fa";
 
 const BgHeroImage = styled(BackgroundImage)`
   background-size: cover;
-  height: 100vh;
-  padding-top: 60px;
-  position: relative;
-`;
-
-const Center = styled.div`
+  width: 100%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    to top,
-    rgba(170, 7, 107, 0.3),
-    rgba(97, 4, 95, 0.1)
-  );
-`;
-
-const BottomSection = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-`;
-const Title = styled.h1`
-  color: #fff;
-`;
-
-const Description = styled.p`
-  color: #fff;
+  text-align: center;
 `;
 
 function Hero({ title, description, sectionBottom }) {
@@ -55,16 +33,62 @@ function Hero({ title, description, sectionBottom }) {
     }
   `);
   return (
-    <div>
-      <BgHeroImage fluid={data.file.childImageSharp.fluid}>
-        <Center>
-          <Title>{title}</Title>
-          <Description>{description}</Description>
-          <button>call to action</button>
-        </Center>
-        <BottomSection>{sectionBottom}</BottomSection>
-      </BgHeroImage>
-    </div>
+    <BgHeroImage fluid={data.file.childImageSharp.fluid}>
+      <div
+        css={css`
+          width: 100%;
+          height: inherit;
+          padding-top: 100px;
+          padding-bottom: 100px;
+          background-image: linear-gradient(
+            133deg,
+            rgba(26, 2, 42, 0.75),
+            rgba(130, 0, 42, 0.6)
+          );
+        `}
+      >
+        <div
+          css={css`
+            margin: 100px 0 50px 0;
+          `}
+        >
+          <h1
+            css={css`
+              font-size: 36px;
+              ine-height: 1.33;
+              color: #fff;
+            `}
+          >
+            Laura Consulting
+          </h1>
+          <p
+            css={css`
+              color: #fff;
+              padding: 10px;
+              line-height: 1.75;
+              font-size: 16px;
+            `}
+          >
+            Alguna Frase extensa para describir el negocio y los beneficios que
+            el prospecto puede llegar a tener
+          </p>
+          <button
+            css={css`
+              background-color: transparent;
+              margin: 15px 0;
+              padding: 7px 30px;
+              border-radius: 25px;
+              border: 2px solid #e91e63;
+              color: #fff;
+              font-size: 1.3rem;
+              cursor: pointer;
+            `}
+          >
+            Contacto <FaLocationArrow />
+          </button>
+        </div>
+      </div>
+    </BgHeroImage>
   );
 }
 

@@ -5,6 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 /** @jsx jsx */
+import React from "react";
 import PropTypes from "prop-types";
 
 import { css, jsx } from "@emotion/core";
@@ -57,7 +58,7 @@ Section.propTypes = {
   transparent: PropTypes.bool,
 };
 
-const Layout = ({ children }) => {
+const Layout = ({ render }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -71,15 +72,6 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Hero
-        title="Hello world"
-        description="description"
-        sectionBottom={
-          <Section transparent>
-            <Services />
-          </Section>
-        }
-      />
       <div
         style={{
           margin: `0 auto`,
@@ -87,9 +79,8 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
-        <main>{children}</main>
+        <main>{render({ paddingTop: 65 })}</main>
       </div>
-      <Footer />
     </>
   );
 };
