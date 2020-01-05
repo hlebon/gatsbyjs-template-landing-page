@@ -2,6 +2,7 @@
 import React from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import { css, jsx } from "@emotion/core";
+import Img from "gatsby-image";
 
 const styles = {
   container: css`
@@ -45,7 +46,7 @@ const styles = {
   `,
 };
 
-function ServiceCard({ description, onPress }) {
+function ServiceCard({ description, icon, onPress }) {
   return (
     <div css={styles.container}>
       <div css={styles.content}>
@@ -53,9 +54,12 @@ function ServiceCard({ description, onPress }) {
           css={css`
             width: 100%;
             flex: 1.2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           `}
         >
-          {description}
+          <Img fixed={icon.fixed} />
         </div>
         <div
           css={css`
@@ -69,8 +73,12 @@ function ServiceCard({ description, onPress }) {
           <h5
             css={css`
               font-size: 16px;
-              font-weight: 400;
+              font-weight: 700;
               text-align: center;
+              line-height: 1.33;
+              font-family: Montserrat, Helvetica Neue, Helvetica, Roboto, Arial,
+                sans-serif;
+              color: #4c3d54;
             `}
           >
             {description}

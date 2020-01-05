@@ -55,7 +55,9 @@ function Hero({ title, description, sectionBottom }) {
           <h1
             css={css`
               font-size: 36px;
-              ine-height: 1.33;
+              font-family: Montserrat, Helvetica Neue, Helvetica, Roboto, Arial,
+                sans-serif;
+              line-height: 1.33;
               color: #fff;
             `}
           >
@@ -67,6 +69,9 @@ function Hero({ title, description, sectionBottom }) {
               padding: 10px;
               line-height: 1.75;
               font-size: 16px;
+              font-family: "Droid Serif", Palatino Linotype, Book Antiqua,
+                Palatino, FreeSerif, serif;
+              font-style: italic;
             `}
           >
             Alguna Frase extensa para describir el negocio y los beneficios que
