@@ -21,7 +21,7 @@ const BgHeroImage = styled(BackgroundImage)`
 `;
 
 function Hero({ onClick }) {
-  const data = useStaticQuery(graphql`
+  const { file, site } = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "hero.jpg" }) {
         childImageSharp {
@@ -30,10 +30,17 @@ function Hero({ onClick }) {
           }
         }
       }
+      site {
+        siteMetadata {
+          title
+          description
+        }
+      }
     }
   `);
+
   return (
-    <BgHeroImage fluid={data.file.childImageSharp.fluid}>
+    <BgHeroImage fluid={file.childImageSharp.fluid}>
       <div
         css={css`
           width: 100%;
@@ -61,7 +68,7 @@ function Hero({ onClick }) {
               color: #fff;
             `}
           >
-            Laura Consulting
+            {site.siteMetadata.title}
           </h1>
           <p
             css={css`
@@ -74,8 +81,7 @@ function Hero({ onClick }) {
               font-style: italic;
             `}
           >
-            Alguna Frase extensa para describir el negocio y los beneficios que
-            el prospecto puede llegar a tener
+            {site.siteMetadata.description}
           </p>
           <button
             onClick={onClick}
