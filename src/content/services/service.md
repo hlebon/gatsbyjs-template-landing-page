@@ -1,4 +1,4 @@
 ---
 title: 'Contabilidad General'
-icon: ./target.png
+icon: ./icons/todolist.png
 ---

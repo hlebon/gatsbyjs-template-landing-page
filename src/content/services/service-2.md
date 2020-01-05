@@ -1,4 +1,4 @@
 ---
-title: 'Contabilidad General'
-icon: ./target.png
+title: 'Asesoria Fiscal'
+icon: ./icons/target.png
 ---

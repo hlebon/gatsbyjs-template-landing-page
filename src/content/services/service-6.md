@@ -1,4 +1,4 @@
 ---
-title: 'Contabilidad General'
-icon: ./target.png
+title: 'Estados Financieros'
+icon: ./icons/documents.png
 ---

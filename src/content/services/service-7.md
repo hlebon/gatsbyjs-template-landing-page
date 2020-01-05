@@ -1,4 +1,4 @@
 ---
-title: 'Contabilidad General'
-icon: ./target.png
+title: 'Declaración de renta y anexos'
+icon: ./icons/list.png
 ---

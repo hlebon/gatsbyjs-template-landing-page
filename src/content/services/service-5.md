@@ -1,4 +1,4 @@
 ---
-title: 'Contabilidad General'
-icon: ./target.png
+title: 'Calculo de prestaciones Laborales'
+icon: ./icons/todoprogress.png
 ---
