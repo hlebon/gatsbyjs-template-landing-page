@@ -20,7 +20,7 @@ const BgHeroImage = styled(BackgroundImage)`
   text-align: center;
 `;
 
-function Hero({ title, description, sectionBottom }) {
+function Hero({ onClick }) {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "hero.jpg" }) {
@@ -78,6 +78,7 @@ function Hero({ title, description, sectionBottom }) {
             el prospecto puede llegar a tener
           </p>
           <button
+            onClick={onClick}
             css={css`
               background-color: transparent;
               margin: 15px 0;
@@ -87,6 +88,9 @@ function Hero({ title, description, sectionBottom }) {
               color: #fff;
               font-size: 1.3rem;
               cursor: pointer;
+              &:active {
+                border-color: pink;
+              }
             `}
           >
             Contacto <FaLocationArrow />

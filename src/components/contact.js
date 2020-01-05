@@ -63,7 +63,7 @@ const ContactForm = () => {
       css={css`
         background-color: #fff;
         box-shadow: 1px 2px 10px #c7c7c7;
-        padding: 25px 15px;
+        padding: 25px 25px;
         display: flex;
         flex-direction: column;
       `}

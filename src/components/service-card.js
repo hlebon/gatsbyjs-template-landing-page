@@ -7,7 +7,7 @@ import Img from "gatsby-image";
 const styles = {
   container: css`
     width: 100%;
-    min-height: 130px;
+    min-height: 120px;
     padding: 10px;
     background: #fff;
     color: black;
@@ -72,7 +72,7 @@ function ServiceCard({ description, icon, onPress }) {
         >
           <h5
             css={css`
-              font-size: 16px;
+              font-size: 14px;
               font-weight: 700;
               text-align: center;
               line-height: 1.33;

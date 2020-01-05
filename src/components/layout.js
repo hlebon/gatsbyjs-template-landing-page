@@ -73,13 +73,12 @@ const Layout = ({ render }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `100%`,
-          paddingTop: 0,
-        }}
+        css={css`
+          margin: 0 auto;
+          maxwidth: 100%;
+        `}
       >
-        <main>{render({ paddingTop: 65 })}</main>
+        <main>{render()}</main>
       </div>
     </>
   );

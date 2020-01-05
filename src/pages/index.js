@@ -8,11 +8,6 @@ import Hero from "../components/hero";
 import ContactForm from "../components/contact";
 import { graphql } from "gatsby";
 
-// "Cálculo y presentación de ITBMS, Remesas, Informe 43",
-//                   "Declaración de renta y anexos",
-//                   "Estados Financieros",
-//                   "Calculo de prestaciones Laborales",
-
 export const query = graphql`
   {
     allMarkdownRemark {
@@ -36,23 +31,49 @@ const IndexPage = ({ data }) => {
   const {
     allMarkdownRemark: { nodes },
   } = data;
-  console.log({ nodes });
+  const formRef = React.useRef(null);
   return (
     <Layout
-      render={({ paddingTop }) => {
+      render={() => {
         return (
           <>
             <SEO title="Laura" />
-            <Hero />
+            <Hero
+              onClick={() => {
+                console.log(
+                  formRef.current.scrollIntoView({
+                    behavior: "smooth",
+                  })
+                );
+              }}
+            />
             {/* servicios */}
             <div style={{ marginTop: "25px" }}>
-              <section style={{ width: "95%", margin: "auto" }}>
+              <section
+                css={css`
+                  width: 95%;
+                  margin: auto;
+                  @media (min-width: 700px) {
+                    width: 70%;
+                  }
+                  @media (min-width: 1200px) {
+                    width: 55%;
+                  }
+                  @media (min-width: 1400px) {
+                    width: 50%;
+                  }
+                `}
+              >
                 <h3
-                  style={{
-                    width: "100%",
-                    textAlign: "center",
-                    marginBottom: "15px",
-                  }}
+                  css={css`
+                    width: 100%;
+                    font-size: 30px;
+                    line-height: 1.33;
+                    font-family: Montserrat, Helvetica Neue, Helvetica, Roboto,
+                      Arial, sans-serif;
+                    text-align: center;
+                    margin-bottom: 15px;
+                  `}
                 >
                   Servicios
                 </h3>
@@ -76,15 +97,17 @@ const IndexPage = ({ data }) => {
                       }}
                     >
                       {nodes.map(({ frontmatter }, index) => {
-                        console.log({ frontmatter });
                         return (
                           <li
                             key={index.toString()}
-                            style={{
-                              width: "calc( (100% / 2) - 10px )",
-                              margin: "5px",
-                              marginBottom: "10px",
-                            }}
+                            css={css`
+                              width: calc((100% / 2) - 10px);
+                              margin: 5px;
+                              margin-bottom: 10px;
+                              @media (min-width: 1200px) {
+                                width: calc((100% / 4) - 10px);
+                              }
+                            `}
                           >
                             <ServiceCard
                               description={frontmatter.title}
@@ -99,11 +122,16 @@ const IndexPage = ({ data }) => {
                   <div
                     css={css`
                       width: 100%;
+                      @media (min-width: 700px) {
+                        width: 40%;
+                      }
                     `}
                   ></div>
                 </div>
               </section>
               <section
+                id={"contact"}
+                ref={formRef}
                 css={css`
                   margin-top: 25px;
                   padding: 15px 0;
@@ -114,6 +142,15 @@ const IndexPage = ({ data }) => {
                   css={css`
                     width: 90%;
                     margin: auto;
+                    @media (min-width: 700px) {
+                      width: 70%;
+                    }
+                    @media (min-width: 1200px) {
+                      width: 55%;
+                    }
+                    @media (min-width: 1400px) {
+                      width: 50%;
+                    }
                   `}
                 >
                   <div
