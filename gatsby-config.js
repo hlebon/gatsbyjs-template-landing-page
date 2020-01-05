@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Laura Consulting`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `LR Consulting Group`,
+    description: `Alguna Frase extensa para describir el negocio y los beneficios que el prospecto puede llegar a tener.`,
+    author: `@hanslgarcia`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
