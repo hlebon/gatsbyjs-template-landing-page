@@ -52,7 +52,7 @@ const IndexPage = ({ data }) => {
               <section
                 css={css`
                   width: 95%;
-                  margin: auto;
+                  margin: 5rem auto;
                   @media (min-width: 700px) {
                     width: 70%;
                   }
@@ -75,7 +75,7 @@ const IndexPage = ({ data }) => {
                     margin-bottom: 15px;
                   `}
                 >
-                  Servicios
+                  En lo que podemos ayudarte
                 </h3>
                 <div
                   css={css`
@@ -86,6 +86,9 @@ const IndexPage = ({ data }) => {
                   <div
                     css={css`
                       width: 100%;
+                      @media (min-width: 1200px) {
+                        width: 50%;
+                      }
                     `}
                   >
                     <ul
@@ -104,9 +107,6 @@ const IndexPage = ({ data }) => {
                               width: calc((100% / 2) - 10px);
                               margin: 5px;
                               margin-bottom: 10px;
-                              @media (min-width: 1200px) {
-                                width: calc((100% / 4) - 10px);
-                              }
                             `}
                           >
                             <ServiceCard
@@ -122,18 +122,44 @@ const IndexPage = ({ data }) => {
                   <div
                     css={css`
                       width: 100%;
-                      @media (min-width: 700px) {
-                        width: 40%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      @media (min-width: 1200px) {
+                        width: 50%;
                       }
                     `}
-                  ></div>
+                  >
+                    <div
+                      css={css`
+                        padding: 0;
+                        @media (min-width: 1200px) {
+                          padding-left: 2rem;
+                        }
+                      `}
+                    >
+                      <h3>Services que necesitas</h3>
+                      <p
+                        css={css`
+                          font-size: 2rem;
+                          font-family: "Droid Serif", Palatino Linotype,
+                            Book Antiqua, Palatino, FreeSerif, serif;
+                          font-style: italic;
+                        `}
+                      >
+                        En esta seccion puedes escribir una frase extensa para
+                        dar al conocer al cliente porque deberia usar comprar
+                        tus servicios y no solo eso sino de los beneficios que
+                        obtendra al hacerlo.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </section>
               <section
                 id={"contact"}
                 ref={formRef}
                 css={css`
-                  margin-top: 25px;
                   padding: 15px 0;
                   background-color: #f6f6f6;
                 `}
@@ -141,7 +167,7 @@ const IndexPage = ({ data }) => {
                 <div
                   css={css`
                     width: 90%;
-                    margin: auto;
+                    margin: 5rem auto;
                     @media (min-width: 700px) {
                       width: 70%;
                     }
@@ -155,7 +181,6 @@ const IndexPage = ({ data }) => {
                 >
                   <div
                     css={css`
-                      padding: 50px 0;
                       text-align: center;
                     `}
                   >
@@ -172,6 +197,7 @@ const IndexPage = ({ data }) => {
                     </h3>
                     <p
                       css={css`
+                        margin-bottom: 2rem;
                         text-align: center;
                         font-family: "Droid Serif", Palatino Linotype,
                           Book Antiqua, Palatino, FreeSerif, serif;
@@ -182,7 +208,67 @@ const IndexPage = ({ data }) => {
                       que necesitas
                     </p>
                   </div>
-                  <ContactForm />
+                  <div
+                    css={css`
+                      display: flex;
+                      flex-wrap: wrap;
+                    `}
+                  >
+                    <div
+                      css={css`
+                        width: 100%;
+                        @media (min-width: 1200px) {
+                          width: 50%;
+                        }
+                        @media (min-width: 1400px) {
+                          width: 50%;
+                        }
+                      `}
+                    >
+                      <ContactForm />
+                    </div>
+                    <div
+                      css={css`
+                        width: 100%;
+                        @media (min-width: 1200px) {
+                          width: 50%;
+                        }
+                        @media (min-width: 1400px) {
+                          width: 50%;
+                        }
+                        font-family: "Droid Serif", Palatino Linotype,
+                          Book Antiqua, Palatino, FreeSerif;
+                      `}
+                    >
+                      <div
+                        css={css`
+                          padding: 1rem;
+                          margin-top: 2.5rem;
+                          @media (min-width: 1200px) {
+                            padding: 2rem 1rem 2rem 4rem;
+                          }
+                        `}
+                      >
+                        <div>
+                          <h4>Direccion</h4>
+                          <div>
+                            Las oficinas están ubicadas en Vía España , calle
+                            Otilia A. De Tejeira. Edificio Centro Empresarial
+                            Mar Del Sur - piso #4 Oficina 4-11
+                          </div>
+                        </div>
+                        <div
+                          css={css`
+                            margin-top: 1rem;
+                          `}
+                        >
+                          <h4>Telefono y Email</h4>
+                          <p>(507) 234-7569</p>
+                          <p>test@test.com</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </section>
             </div>
