@@ -75,7 +75,7 @@ function Hero({ onClick }) {
               color: #fff;
               padding: 10px;
               line-height: 1.75;
-              font-size: 16px;
+              font-size: 20px;
               font-family: "Droid Serif", Palatino Linotype, Book Antiqua,
                 Palatino, FreeSerif, serif;
               font-style: italic;
@@ -88,18 +88,22 @@ function Hero({ onClick }) {
             css={css`
               background-color: transparent;
               margin: 15px 0;
-              padding: 7px 30px;
-              border-radius: 25px;
+              padding: 12px 30px;
+              border-radius: 7px;
               border: 2px solid #e91e63;
               color: #fff;
-              font-size: 1.3rem;
+              letter-spacing: 1px;
+              font-family: Montserrat, Helvetica Neue, Helvetica, Roboto, Arial,
+                sans-serif;
+              font-size: 1.1rem;
+              font-weight: 700;
               cursor: pointer;
               &:active {
                 border-color: pink;
               }
             `}
           >
-            Contacto <FaLocationArrow />
+            CONTACTO <FaLocationArrow />
           </button>
         </div>
       </div>
