@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import React from "react";
-import { AiOutlineRight } from "react-icons/ai";
 import { css, jsx } from "@emotion/core";
 import Img from "gatsby-image";
 
